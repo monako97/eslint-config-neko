@@ -30,7 +30,6 @@
     "prettier": "^2.5.1"
   },
   "files": [
-    "index.js",
-    "package.json"
+    "index.js"
   ]
 }
