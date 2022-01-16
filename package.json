@@ -28,5 +28,9 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-webpack-plugin": "^3.1.1",
     "prettier": "^2.5.1"
-  }
+  },
+  "files": [
+    "index.js",
+    "package.json"
+  ]
 }
