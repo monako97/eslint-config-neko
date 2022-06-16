@@ -7,7 +7,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: 'latest'
+      version: 'detect'
     }
   },
   // 定义文件继承的子规范
