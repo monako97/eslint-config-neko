@@ -8,7 +8,9 @@ module.exports = {
   settings: {
     react: {
       version: 'detect'
-    }
+    },
+    'mdx/code-blocks': true,
+    'mdx/language-mapper': {},
   },
   // 定义文件继承的子规范
   extends: [
@@ -17,7 +19,8 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
+    'plugin:mdx/recommended'
   ],
   // 定义ESLint的解析器
   parser: '@typescript-eslint/parser',
