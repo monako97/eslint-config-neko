@@ -45,6 +45,7 @@ module.exports = {
   // "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
   // "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
   rules: {
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }], // 支持css in js的css属性
     "react/jsx-uses-react": "off", // 防止React被错误的标记为未使用
     "react/react-in-jsx-scope": "off", // 防止在使用JSX丢失React
     "react-hooks/rules-of-hooks": 2,
