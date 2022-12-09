@@ -40,11 +40,16 @@ module.exports = {
     sourceType: "module",
   },
   // 定义了该eslint文件所依赖的插件
-  plugins: ["react", "react-hooks", "@typescript-eslint", "html"],
+  plugins: ["react", "react-hooks", "@typescript-eslint", "html", "@emotion"],
   // "off" 或 0 - 关闭规则
   // "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
   // "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
   rules: {
+    "@emotion/jsx-import": "error",
+    "@emotion/pkg-renaming": "error",
+    "@emotion/no-vanilla": "error",
+    "@emotion/import-from-emotion": "error",
+    "@emotion/styled-import": "error",
     "react/no-unknown-property": ["error", { "ignore": ["css"] }], // 支持css in js的css属性
     "react/jsx-uses-react": "off", // 防止React被错误的标记为未使用
     "react/react-in-jsx-scope": "off", // 防止在使用JSX丢失React
