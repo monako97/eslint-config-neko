@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-neko",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "neko eslint rules",
   "main": "index.js",
   "bundleDependencies": false,
