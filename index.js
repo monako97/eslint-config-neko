@@ -18,6 +18,8 @@ module.exports = {
     "plugin:prettier/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
   ],
   overrides: [
     {
@@ -43,17 +45,16 @@ module.exports = {
     sourceType: "module",
   },
   // 定义了该eslint文件所依赖的插件
-  plugins: [
-    "react",
-    "react-hooks",
-    "@typescript-eslint",
-    "html",
-    "eslint-plugin-import",
-  ],
+  plugins: ["react", "react-hooks", "@typescript-eslint", "html", "import"],
   // "off" 或 0 - 关闭规则
   // "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
   // "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
   rules: {
+    "import/no-unresolved": [2, { commonjs: true, amd: true }],
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
     "react/jsx-uses-react": "off", // 防止React被错误的标记为未使用
     "react/react-in-jsx-scope": "off", // 防止在使用JSX丢失React
     "react-hooks/rules-of-hooks": 2,
