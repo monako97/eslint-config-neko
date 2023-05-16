@@ -6,9 +6,9 @@ module.exports = {
     node: true,
   },
   settings: {
-    react: {
-      version: 'detect',
-    },
+    // react: {
+    //   version: 'detect',
+    // },
   },
   // 定义文件继承的子规范
   extends: [
@@ -16,8 +16,8 @@ module.exports = {
     'prettier',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
+    // 'plugin:react/recommended',
+    // 'plugin:react-hooks/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
@@ -46,7 +46,10 @@ module.exports = {
     sourceType: 'module',
   },
   // 定义了该eslint文件所依赖的插件
-  plugins: ['react', 'react-hooks', '@typescript-eslint', 'html', 'import'],
+  plugins: [
+    // 'react', 
+    // 'react-hooks', 
+    '@typescript-eslint', 'html', 'import'],
   // "off" 或 0 - 关闭规则
   // "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
   // "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
@@ -90,10 +93,10 @@ module.exports = {
     'import/namespace': 2,
     'import/default': 2,
     'import/export': 2,
-    'react/jsx-uses-react': 'off', // 防止React被错误的标记为未使用
-    'react/react-in-jsx-scope': 'off', // 防止在使用JSX丢失React
-    'react-hooks/rules-of-hooks': 2,
-    'react-hooks/exhaustive-deps': 1,
+    // 'react/jsx-uses-react': 'off', // 防止React被错误的标记为未使用
+    // 'react/react-in-jsx-scope': 'off', // 防止在使用JSX丢失React
+    // 'react-hooks/rules-of-hooks': 2,
+    // 'react-hooks/exhaustive-deps': 1,
     'no-array-constructor': 2, // 禁止使用数组构造器
     'no-catch-shadow': 2, // 禁止catch子句参数与外部作用域变量同名
     'no-class-assign': 2, // 禁止给类赋值
