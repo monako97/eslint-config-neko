@@ -183,7 +183,7 @@ module.exports = {
     // 禁止重复模块导入
     'no-duplicate-imports': 2,
     // 使用单引号，字符串中包含了一个其它引号 允许"a string containing 'single' quotes"
-    quotes: [2, 'single', { avoidEscape: true }],
+    quotes: [2, 'single', { avoidEscape: true, allowTemplateLiterals: false }],
   },
   globals: {
     routeBaseName: 'readonly',
