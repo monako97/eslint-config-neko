@@ -25,6 +25,7 @@ module.exports = {
       },
       rules: {
         'react/jsx-no-undef': 0,
+        'solid/jsx-no-undef': 0,
       },
     },
   ],
@@ -70,8 +71,13 @@ module.exports = {
             group: 'builtin',
             position: 'before',
           },
+          {
+            pattern: 'solid-js',
+            group: 'builtin',
+            position: 'before',
+          },
         ],
-        pathGroupsExcludedImportTypes: ['react', 'builtin'],
+        pathGroupsExcludedImportTypes: ['react', 'solid-js', 'builtin'],
         'newlines-between': 'never',
         alphabetize: {
           order: 'asc',
