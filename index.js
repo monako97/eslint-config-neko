@@ -5,15 +5,16 @@ module.exports = {
     es6: true,
     node: true,
   },
+  settings: {},
   // 定义文件继承的子规范
   extends: [
     'eslint:recommended',
+    'prettier',
     'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'prettier',
-    'plugin:prettier/recommended',
   ],
   overrides: [
     {
@@ -39,11 +40,7 @@ module.exports = {
     sourceType: 'module',
   },
   // 定义了该eslint文件所依赖的插件
-  plugins: [
-    '@typescript-eslint',
-    'html',
-    'import',
-  ],
+  plugins: ['@typescript-eslint', 'html', 'import'],
   // "off" 或 0 - 关闭规则
   // "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
   // "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
@@ -173,6 +170,7 @@ module.exports = {
     'no-warning-comments': [1, { terms: ['todo', 'fixme', 'xxx'], location: 'start' }], // 不能有警告备注
     'arrow-parens': 1, // 箭头函数用小括号括起来
     'arrow-spacing': 2, // =>的前/后括号
+    'comma-spacing': 2, // 逗号前后的空格
     'callback-return': 1, // 避免多次调用回调什么的
     'dot-notation': [2, { allowKeywords: true }], // 避免不必要的方括号
     'guard-for-in': 2, // for in循环要用if语句过滤
