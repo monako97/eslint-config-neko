@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-neko",
-  "version": "1.0.23-beta.5",
+  "version": "1.0.23-beta.8",
   "description": "neko eslint rules",
   "main": "index.js",
   "bundleDependencies": false,
@@ -26,6 +26,7 @@
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-mdx": "2.1.0",
     "eslint-plugin-prettier": "4.2.1",
+    "eslint-webpack-plugin": "4.0.1",
     "prettier": "2.8.8"
   },
   "files": [
