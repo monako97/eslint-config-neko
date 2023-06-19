@@ -47,11 +47,11 @@ const baseConfig = {
   // "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
   rules: {
     "sort-imports": ["error", {
-      "ignoreCase": false,
-      "ignoreDeclarationSort": false,
-      "ignoreMemberSort": false,
-      "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
-      "allowSeparatedGroups": true
+      ignoreCase: false,
+      ignoreDeclarationSort: true, // don"t want to sort import lines, use eslint-plugin-import instead
+      ignoreMemberSort: false,
+      memberSyntaxSortOrder: ['all', 'multiple', 'single', 'none'],
+      allowSeparatedGroups: false,
     }],
     "import/no-unresolved": [
       2,
@@ -64,6 +64,7 @@ const baseConfig = {
     "import/order": [
       "error",
       {
+        warnOnUnassignedImports: true,
         groups: [
           "builtin",
           "external",
@@ -88,7 +89,6 @@ const baseConfig = {
         "newlines-between": "never",
         alphabetize: {
           order: "asc",
-          orderImportKind: "asc",
           caseInsensitive: true,
         },
       },
