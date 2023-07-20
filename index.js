@@ -148,7 +148,8 @@ const baseConfig = {
     "no-redeclare": 2, // 禁止重复声明变量
     "no-regex-spaces": 2, // 禁止在正则表达式字面量中使用多个空格 /foo bar/
     "no-self-compare": 2, // 不能比较自身
-    "no-shadow": 2, // 外部作用域中的变量不能与它所包含的作用域中的变量或参数同名
+    "no-shadow": 0, // 外部作用域中的变量不能与它所包含的作用域中的变量或参数同名
+    '@typescript-eslint/no-shadow': 2,
     "no-shadow-restricted-names": 2, // 严格模式中规定的限制标识符不能作为声明时的变量名使用
     "no-spaced-func": 2, // 函数调用时 函数名与()之间不能有空格
     "no-sparse-arrays": 2, // 禁止稀疏数组， [1,,2]
@@ -159,7 +160,8 @@ const baseConfig = {
     "no-unneeded-ternary": 2, // 禁止不必要的嵌套 var isYes = answer === 1 ? true : false;
     "no-unreachable": 2, // 不能有无法执行的代码
     "no-unused-expressions": [2, { allowTaggedTemplates: true }], // 禁止无用的表达式
-    "no-unused-vars": [2, { vars: "all", args: "after-used" }], // 不能有声明后未被使用的变量或参数
+    "no-unused-vars": 0, // 不能有声明后未被使用的变量或参数
+    '@typescript-eslint/no-unused-vars': [2, { vars: "all", args: "after-used" }],
     "no-useless-call": 2, // 禁止不必要的call和apply
     "no-void": 2, // 禁用void操作符
     "no-with": 2, // 禁用with
