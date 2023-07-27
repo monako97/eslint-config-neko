@@ -163,7 +163,7 @@ const baseConfig = {
     "no-unused-vars": 0, // 不能有声明后未被使用的变量或参数
     '@typescript-eslint/no-unused-vars': [2, { vars: "all", args: "after-used" }],
     "no-useless-call": 2, // 禁止不必要的call和apply
-    "no-void": 2, // 禁用void操作符
+    "no-void": 0, // 禁用void操作符
     "no-with": 2, // 禁用with
     "array-bracket-spacing": [2, "never"], // 是否允许非空数组里面有多余的空格
     "comma-style": [2, "last"], // 逗号风格，换行时在行首还是行尾
