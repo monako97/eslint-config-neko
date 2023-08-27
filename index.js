@@ -214,7 +214,7 @@ const baseConfig = {
   ],
 };
 
-if (process.env?.FRAMEWORK === "solid-js") {
+if (process.env?.FRAMEWORK === "solid") {
   baseConfig.extends.push("plugin:solid/recommended");
   baseConfig.plugins.push("solid");
 } else if (process.env?.FRAMEWORK === "react") {
