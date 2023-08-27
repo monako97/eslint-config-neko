@@ -16,19 +16,7 @@ const baseConfig = {
     "plugin:import/warnings",
     "plugin:import/typescript",
   ],
-  overrides: [
-    {
-      files: ["*.mdx", "*.md"],
-      extends: "plugin:mdx/recommended",
-      parserOptions: {
-        ecmaVersion: "latest",
-      },
-      rules: {
-        "react/jsx-no-undef": 0,
-        "solid/jsx-no-undef": 0,
-      },
-    },
-  ],
+  overrides: [],
   // 定义ESLint的解析器
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -46,13 +34,16 @@ const baseConfig = {
   // "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
   // "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
   rules: {
-    "sort-imports": ["error", {
-      ignoreCase: false,
-      ignoreDeclarationSort: true, // don"t want to sort import lines, use eslint-plugin-import instead
-      ignoreMemberSort: false,
-      memberSyntaxSortOrder: ['all', 'multiple', 'single', 'none'],
-      allowSeparatedGroups: false,
-    }],
+    "sort-imports": [
+      "error",
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: true, // don"t want to sort import lines, use eslint-plugin-import instead
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ["all", "multiple", "single", "none"],
+        allowSeparatedGroups: false,
+      },
+    ],
     "import/no-unresolved": [
       2,
       {
@@ -149,7 +140,7 @@ const baseConfig = {
     "no-regex-spaces": 2, // 禁止在正则表达式字面量中使用多个空格 /foo bar/
     "no-self-compare": 2, // 不能比较自身
     "no-shadow": 0, // 外部作用域中的变量不能与它所包含的作用域中的变量或参数同名
-    '@typescript-eslint/no-shadow': 2,
+    "@typescript-eslint/no-shadow": 2,
     "no-shadow-restricted-names": 2, // 严格模式中规定的限制标识符不能作为声明时的变量名使用
     "no-spaced-func": 2, // 函数调用时 函数名与()之间不能有空格
     "no-sparse-arrays": 2, // 禁止稀疏数组， [1,,2]
@@ -161,7 +152,10 @@ const baseConfig = {
     "no-unreachable": 2, // 不能有无法执行的代码
     "no-unused-expressions": [2, { allowTaggedTemplates: true }], // 禁止无用的表达式
     "no-unused-vars": 0, // 不能有声明后未被使用的变量或参数
-    '@typescript-eslint/no-unused-vars': [2, { vars: "all", args: "after-used" }],
+    "@typescript-eslint/no-unused-vars": [
+      2,
+      { vars: "all", args: "after-used" },
+    ],
     "no-useless-call": 2, // 禁止不必要的call和apply
     "no-void": 0, // 禁用void操作符
     "no-with": 2, // 禁用with
@@ -206,14 +200,23 @@ const baseConfig = {
     projectName: "readonly",
     providerConfig: "writable",
   },
-  ignorePatterns: [
-    "node_modules/",
-    "components/**/examples/*.mdx",
-    "dist/",
-    "__snapshots__/",
-  ],
+  ignorePatterns: ["node_modules/", "dist/", "__snapshots__/"],
 };
 
+if (process.env.APPTYPE === "library") {
+  baseConfig.overrides.push({
+    files: ["*.mdx", "*.md"],
+    extends: "plugin:mdx/recommended",
+    parserOptions: {
+      ecmaVersion: "latest",
+    },
+    rules: {
+      "react/jsx-no-undef": 0,
+      "solid/jsx-no-undef": 0,
+    },
+  });
+  baseConfig.ignorePatterns.push("components/**/examples/*.mdx");
+}
 if (process.env?.FRAMEWORK === "solid") {
   baseConfig.extends.push("plugin:solid/recommended");
   baseConfig.plugins.push("solid");
