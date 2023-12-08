@@ -200,23 +200,9 @@ const baseConfig = {
     projectName: "readonly",
     providerConfig: "writable",
   },
-  ignorePatterns: ["node_modules/", "dist/", "__snapshots__/"],
+  ignorePatterns: ["node_modules/", "dist/", "__snapshots__/", "**/**/*.mdx", "**/**/*.md"],
 };
 
-if (process.env.APPTYPE === "library") {
-  baseConfig.overrides.push({
-    files: ["*.mdx", "*.md"],
-    extends: "plugin:mdx/recommended",
-    parserOptions: {
-      ecmaVersion: "latest",
-    },
-    rules: {
-      "react/jsx-no-undef": 0,
-      "solid/jsx-no-undef": 0,
-    },
-  });
-  baseConfig.ignorePatterns.push("components/**/examples/*.mdx");
-}
 if (process.env?.FRAMEWORK === "solid") {
   baseConfig.extends.push("plugin:solid/recommended");
   baseConfig.plugins.push("solid");
