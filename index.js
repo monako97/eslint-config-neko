@@ -5,7 +5,12 @@ const baseConfig = {
     es6: true,
     node: true,
   },
-  settings: {},
+  settings: {
+    "import/resolver": {
+      typescript: true,
+      node: true,
+    },
+  },
   // 定义文件继承的子规范
   extends: [
     "eslint:recommended",
@@ -66,6 +71,21 @@ const baseConfig = {
         ],
         pathGroups: [
           {
+            pattern: "./*.css",
+            group: "builtin",
+            position: "before",
+          },
+          {
+            pattern: "./*.less",
+            group: "builtin",
+            position: "before",
+          },
+          {
+            pattern: "./*.scss",
+            group: "builtin",
+            position: "before",
+          },
+          {
             pattern: "react",
             group: "builtin",
             position: "before",
@@ -76,7 +96,7 @@ const baseConfig = {
             position: "before",
           },
         ],
-        pathGroupsExcludedImportTypes: ["react", "solid-js", "builtin"],
+        pathGroupsExcludedImportTypes: ["react", "solid-js", "builtins"],
         "newlines-between": "never",
         alphabetize: {
           order: "asc",
@@ -200,7 +220,13 @@ const baseConfig = {
     projectName: "readonly",
     providerConfig: "writable",
   },
-  ignorePatterns: ["node_modules/", "dist/", "__snapshots__/", "**/**/*.mdx", "**/**/*.md"],
+  ignorePatterns: [
+    "node_modules/",
+    "dist/",
+    "__snapshots__/",
+    "**/**/*.mdx",
+    "**/**/*.md",
+  ],
 };
 
 if (process.env?.FRAMEWORK === "solid") {
@@ -209,6 +235,7 @@ if (process.env?.FRAMEWORK === "solid") {
 } else if (process.env?.FRAMEWORK === "react") {
   Object.assign(baseConfig, {
     settings: {
+      ...baseConfig.settings,
       react: {
         version: "detect",
       },
