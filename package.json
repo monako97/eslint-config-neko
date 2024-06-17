@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-neko",
-  "version": "2.8.0",
+  "version": "2.8.3",
   "description": "neko eslint rules",
   "main": "index.js",
   "bundleDependencies": false,
@@ -17,7 +17,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "7.13.0",
     "@typescript-eslint/parser": "7.13.0",
-    "eslint": "9.5.0",
+    "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-html": "8.1.1",
