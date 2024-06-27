@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-neko",
-  "version": "2.8.3",
+  "version": "2.8.4",
   "description": "neko eslint rules",
   "main": "index.js",
   "bundleDependencies": false,
@@ -15,12 +15,11 @@
   "author": "moneko",
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "7.13.0",
-    "@typescript-eslint/parser": "7.13.0",
+    "@typescript-eslint/eslint-plugin": "7.14.1",
+    "@typescript-eslint/parser": "7.14.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-import-resolver-typescript": "3.6.1",
-    "eslint-plugin-html": "8.1.1",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-prettier": "5.1.3",
     "eslint-webpack-plugin": "4.2.0",
