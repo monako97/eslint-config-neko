@@ -160,9 +160,6 @@ const globalsVars = {
   providerConfig: 'writable',
 };
 
-globalsVars.AudioWorkletGlobalScope = globalsVars['AudioWorkletGlobalScope '];
-delete globalsVars['AudioWorkletGlobalScope '];
-
 const base = {
   languageOptions: {
     parserOptions: {
