@@ -11,10 +11,7 @@ const baseConfig = {
     "eslint:recommended",
     "prettier",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
+    "plugin:prettier/recommended"
   ],
   overrides: [],
   // 定义ESLint的解析器
